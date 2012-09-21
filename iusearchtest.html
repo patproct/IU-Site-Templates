@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>IU Search test</title>
+	
+	<script type="text/javascript" charset="utf-8">
+		function toggleSites(site) {
+			var siteId = site.attributes.id.value;
+			var siteValue = site.attributes.value.value;
+			if (siteId) {
+				var searchField = document.querySelectorAll("#csesearchbox");
+				if (siteId != 'dept') {
+					searchField[0]['action'] = siteValue;
+					document.getElementById('deptsite').setAttribute("value", "");
+				} else {
+					// Uncomment this code if you are not using a Google Custom Search Engine.
+					// searchField[0]['action'] = "http://www.iu.edu/search/index.shtml";
+					// document.getElementById('deptsite').setAttribute("value", "site:" + siteValue + " ");
+				}
+			}
+		}
+		function concatenateFields() {
+			var cseForm = document.forms['csesearchbox'];
+			var qVal = cseForm['q'].value;
+			var deptsiteVal = cseForm['deptsite'].value;
+			cseForm['q'].value = deptsiteVal + qVal;
+			cseForm["deptsite"].setAttribute('name', '');
+		}
+	</script>
+	<script>
+	  (function() {
+	    var cx = '018164519255312619522:j0m0d6argky';
+	    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+	    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+	        '//www.google.com/cse/cse.js?cx=' + cx;
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+	  })();
+	</script>
+</head>
+<body>
+	<h1>IU Search test</h1>
+	<div class="cseRadioBtns">
+		<input type="radio" name="cx" onclick="toggleSites(this)" value="college.indiana.edu" id="dept" checked /><label for="dept">Arts &amp; Sciences</label><br />
+		<input type="radio" name="cx" onclick="toggleSites(this)" value="http://www.iub.edu/search/index.shtml" id="campus" /><label for="campus">IUB</label><br />
+		<input type="radio" name="cx" onclick="toggleSites(this)" value="http://www.iu.edu/search/index.shtml" id="iu" /><label for="iu">IU</label>
+	</div>
+	<!-- If you are not using Google Custom Search, put http://www.iu.edu/search/index.shtml into the form's action attribute and your department's URL without the http://. For example: site:college.indiana.edu -->
+	<form action="" method="get" id="csesearchbox" name="csesearchbox" onsubmit="javascript:concatenateFields()">
+		<input type="hidden" name="deptsite" value="" id="deptsite" />
+		<p><input type="text" name="q" value="" id="q" onblur="" /></p>
+		<p><input type="submit" value="Search" /></p>
+	</form>
+	<gcse:searchresults-only></gcse:searchresults-only>
+</body>

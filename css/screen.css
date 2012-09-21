@@ -1,0 +1,213 @@
+/***************************************** 
+ * Author: IU Office of Creative Services
+ *
+ * CSS for screen delivery
+ * 
+ * The function of this stylesheet is to 
+ * control the layout and formatting of 
+ * the branding bar and footer.
+ * 
+ * Except for the exceptions stated in 
+ * the README.txt document, none of the 
+ * styles in this document should be 
+ * modified.
+ * 
+ * At the end of this document are 
+ * commented (i.e.: optional) styles that
+ * you can enable to further control the
+ * appearance of the IUB branding bar and
+ * footer.
+ ****************************************/
+ 
+ 
+/****************************************
+ * General Formatting
+ ****************************************/
+
+body {
+	background: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+img {
+	border: 0;
+	display: block;
+}
+
+/****************************************
+ * Skip Navigation Container
+ ****************************************/
+
+#skipnav {
+	left: -9999em;
+	position: absolute;
+	top: -9999em;
+}
+#skipnav hr {
+	display: none;
+}
+
+/****************************************
+ * Branding Bar
+ ****************************************/
+
+#identity {
+	background-color: #7d110c;
+	color: #fff;
+	font-size: 0.625em; /* 10px */
+	height: 44px;
+	line-height: 1em; /* 10px */
+	width: auto;
+}
+#identity hr {
+	display: none;
+}
+#identity #signature {
+	height: 44px;
+	margin: 0 auto;
+	position: relative;
+	text-align: left;
+	width: 760px;
+}
+#identity #signature a.iub {
+	background: url(../img/iub_crimson.gif) no-repeat 20px 0;
+	display: block;
+	height: 44px;
+	left: -20px;
+	position: relative;
+	top: 0;
+	width: 250px;
+}
+#identity #signature a.iub img {
+	display: none;
+}
+
+/****************************************
+ * Footer
+ ****************************************/
+
+#footer {
+	margin: 15px 0 0 0;
+	width: auto;
+}
+#footer hr {
+	display: none;
+}
+#footer #copyright {
+	font-size: 0.688em; /* 11px */
+	line-height: 1.364em; /* 15px */
+	margin: 0 auto;
+	position: relative;
+	text-align: left;
+	width: 760px;
+}
+#footer #copyright a {
+	color: #900;
+	text-decoration: none;
+}
+#footer #copyright a:hover {
+	text-decoration: underline;
+}
+#footer #copyright p {
+	margin: 0;
+	padding: 7px 0 0 8px;
+}
+#footer #copyright #blockiu {
+	background: url(../img/blockiu_white.gif) no-repeat;
+	display: block;
+	float: left;
+	height: 28px;
+	left: -8px;
+	position: relative;
+	top: -7px;
+	width: 22px;
+}
+#footer #copyright #blockiu img {
+	display: none;
+}	
+
+
+/****************************************
+ * Commented (Optional) Styles
+ ****************************************/
+
+
+/****************************************
+ * Alternate White Branding Bar
+ *
+ * Uncomment this section to switch to a
+ * multicolor (crimson and black) signature 
+ * with a white background and bar.
+ ****************************************
+
+#identity {
+	background-color: #fff;
+	color: #000;
+}
+#identity #signature a.iub {
+	background: url(../img/iub_white.gif) no-repeat 20px 0;
+}
+
+*/
+
+
+/****************************************
+ * Alternate White Footer
+ *
+ * Uncomment this section to switch to a
+ * white block IU, text, and links in the
+ * IU footer. This should only be used 
+ * on pages with a black background 
+ * color (HEX: #000000). 
+ *
+ * If your background color is IU crimson 
+ * (HEX: #7d110c), change the image
+ * referenced below 
+ * to ../img/blockiu_crimson.gif.
+ *
+ * Otherwise, you should create a new
+ * Web-optimized Block IU graphic from the 
+ * Photoshop file (../img/blockiu.psd).
+ ****************************************
+
+#footer {
+	color: #fff;
+}
+#footer #copyright a {
+	color: #fff;
+	text-decoration: underline;
+}
+#footer #copyright #blockiu {
+	background: url(../img/blockiu_black.gif) no-repeat;
+}
+
+*/
+
+
+ /****************************************
+ * Fluid Format
+ *
+ * Uncomment this section to give the 
+ * Web site a fluid width.
+ ****************************************
+ 
+body {
+	text-align: left;
+}
+#identity #signature {
+	padding: 0 0 0 15px;
+	width: auto;
+}
+#content {
+	padding: 0 0 0 15px;
+	width: auto;
+}
+#footer #copyright {
+	padding: 0 0 0 15px;
+	width: auto;
+}
+
+*/
