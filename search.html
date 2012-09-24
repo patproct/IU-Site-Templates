@@ -18,7 +18,7 @@
 	#searchbox { width: 370px; top: 8px; right: 0; position: absolute; }
 		#searchbox .cseRadioBtns { float: left; width: 155px; }
 			#csesearchbox { float: right; width: 215px; }
-				#q { width: 160px; }
+				#q { width: 150px; }
 				#csesearchbox input { float: left; margin: 0 0 0 10px; }
 </style>
 <!-- END INDIANA UNIVERSITY BRANDING BAR AND FOOTER STYLES -->
@@ -26,15 +26,15 @@
 <!-- Begin Google Custom Search code -->
 <script type="text/javascript" charset="utf-8">
 	function toggleSites(site) {
-		var siteId = site.attributes.id.value;
+		var siteId = site.attributes.class.value;
 		var siteValue = site.attributes.value.value;
 		if (siteId) {
 			var searchField = document.querySelectorAll("#csesearchbox");
 			if (siteId != 'dept') { searchField[0]['action'] = siteValue; document.getElementById('deptsite').setAttribute("value", ""); }
 			else {
 				// Comment this code if you are using a Google Custom Search Engine.
-				// searchField[0]['action'] = "http://www.iu.edu/search/index.shtml";
-				// document.getElementById('deptsite').setAttribute("value", "site:" + siteValue + " ");
+				searchField[0]['action'] = "http://www.iu.edu/search/index.shtml";
+				document.getElementById('deptsite').setAttribute("value", "site:" + siteValue + " ");
 			}
 		}
 	}
@@ -43,8 +43,9 @@
 		cseForm['q'].value = cseForm['deptsite'].value + cseForm['q'].value;
 		cseForm["deptsite"].setAttribute('name', '');
 	}
+	// Uncomment the following code 
 	(function() {
-		var cx = '018164519255312619522:j0m0d6argky'; // Put your Custom Search Engine's ID code in these quotes
+		var cx = ''; // Put your Custom Search Engine's ID code in these quotes
 		var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
 		gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
@@ -67,15 +68,16 @@
 		<!-- BEGIN IU SEARCH HTML -->
 		<div id="searchbox">
 			<div class="cseRadioBtns">
-				<input type="radio" name="cx" onclick="toggleSites(this)" value="college.indiana.edu" id="dept" checked /><label for="dept">Arts &amp; Sciences</label>
-				<input type="radio" name="cx" onclick="toggleSites(this)" value="http://www.iub.edu/search/index.shtml" id="iub" /><label for="iub">IUB</label>
+				<input type="radio" name="cx" onclick="toggleSites(this)" class="dept" id="dept1" value="law.indiana.edu" checked /><label for="dept1">Law School</label>
+				<input type="radio" name="cx" onclick="toggleSites(this)" class="dept" id="dept2" value="law.indiana.edu/lawlibrary" /><label for="dept2">Law School</label>
+				<!-- <input type="radio" name="cx" onclick="toggleSites(this)" value="http://www.iub.edu/search/index.shtml" id="iub" /><label for="iub">IUB</label> -->
 			</div>
 			<!-- Put your department's website's search page URL in the "action" attribute below if you are using GCS. -->
-			<form action="search.html" method="get" id="csesearchbox" name="csesearchbox" onsubmit="javascript:concatenateFields()">
+			<form action="http://www.iu.edu/search/index.shtml" method="get" id="csesearchbox" name="csesearchbox" onsubmit="javascript:concatenateFields()">
 				<!-- Comment or remove the "deptsite" tag below if you are using Google Custom Search -->
-				<!-- <input type="hidden" name="deptsite" id="deptsite" value="site:college.indiana.edu " /> -->
+				<input type="hidden" name="deptsite" id="deptsite" value="site:law.indiana.edu " />
 				<input type="text" name="q" id="q" value="Search" onblur="if(this.value == '') { this.value = 'Search'; }" onfocus="if(this.value == 'Search') { this.value = ''; }" />
-				<input type="image" src="img/go_red.gif" value="Go" class="submit" />
+				<input type="submit" value="Go" class="submit" />
 			</form>
 		</div>
 		<script type="text/javascript" charset="utf-8">
@@ -91,12 +93,8 @@
 <div style="clear: both;"></div>
 <div id="content">
 	<a id="skip"></a>
-	<h1 style="margin-bottom: 1px;">Department of Departmental Studies</h1>
-	<h2 style="margin-top: 1px; color: #666;">College of Arts and Sciences</h2>
 	<!-- Uncomment this element and put it on your search page if you are using Google Custom Search -->
-	<gcse:search></gcse:search>
-	<!-- <gcse:searchbox-only></gcse:searchbox-only>
-	<gcse:searchresults-only></gcse:searchresults-only> -->
+	<!-- <gcse:search></gcse:search> -->
 </div>
 
 
