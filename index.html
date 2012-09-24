@@ -13,17 +13,13 @@
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
 <link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
 
-<style type="text/css" media="screen">
-	#content { width: 760px; margin: auto; text-align: left; }
-	#searchbox { width: 370px; top: 8px; right: 0; position: absolute; }
-		#searchbox .cseRadioBtns { float: left; width: 155px; }
-			#csesearchbox { float: right; width: 215px; }
-				#q { width: 160px; }
-				#csesearchbox input { float: left; margin: 0 0 0 10px; }
-</style>
 <!-- END INDIANA UNIVERSITY BRANDING BAR AND FOOTER STYLES -->
 
-<!-- Begin Google Custom Search code -->
+<style type="text/css" media="screen">
+	#content { width: 760px; margin: auto; text-align: left; } #searchbox { width: 370px; top: 8px; right: 0; position: absolute; } #searchbox .cseRadioBtns { float: left; width: 155px; } #csesearchbox { float: right; width: 215px; } q { width: 160px; } #csesearchbox input { float: left; margin: 0 0 0 10px; }
+</style>
+
+<!-- Begin Custom Search code -->
 <script type="text/javascript" charset="utf-8">
 	function toggleSites(site) {
 		var siteId = site.attributes.id.value;
@@ -43,6 +39,7 @@
 		cseForm['q'].value = cseForm['deptsite'].value + cseForm['q'].value;
 		cseForm["deptsite"].setAttribute('name', '');
 	}
+	// Uncomment the follow JS function to use GCS
 	(function() {
 		var cx = '018164519255312619522:j0m0d6argky'; // Put your Custom Search Engine's ID code in these quotes
 		var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
@@ -50,7 +47,7 @@
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
 	})();
 </script>
-<!-- End Google Custom Search code -->
+<!-- End Custom Search code -->
 </head>
 <body>
 
@@ -74,7 +71,7 @@
 			<form action="search.html" method="get" id="csesearchbox" name="csesearchbox" onsubmit="javascript:concatenateFields()">
 				<!-- Comment or remove the "deptsite" tag below if you are using Google Custom Search -->
 				<!-- <input type="hidden" name="deptsite" id="deptsite" value="site:college.indiana.edu " /> -->
-				<input type="text" name="q" id="q" />
+				<input type="text" name="q" id="q" value="Search" onblur="if(this.value == '') { this.value = 'Search'; }" onfocus="if(this.value == 'Search') { this.value = ''; }" />
 				<input type="image" src="img/go_red.gif" value="Go" class="submit" />
 			</form>
 		</div>
